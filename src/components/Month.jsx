@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+
 import { MonthButton, MonthButtonContainer } from "./Style";
 
 function Month({ selectedMonth, setSelectedMonth }) {
@@ -16,7 +16,7 @@ function Month({ selectedMonth, setSelectedMonth }) {
   const Mbtn = months.map((data) => {
     return (
       <MonthButton
-        active={data === selectedMonth}
+        $active={data === selectedMonth}
         onClick={() => handleSelectedMonth(data)}
         key={data}
       >

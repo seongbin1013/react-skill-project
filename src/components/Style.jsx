@@ -61,7 +61,7 @@ export const MonthButton = styled.button`
   height: 50px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: ${(props) => (props.active ? "lightblue" : "white")};
+  background-color: ${(props) => (props.$active ? "lightblue" : "white")};
 `;
 
 export const ExpenseDetailsContainer = styled.div`
@@ -102,6 +102,10 @@ export const DetailContainer = styled.div`
   max-width: 1200px;
   min-width: 800px;
   margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const OneBox = styled.div`
@@ -109,9 +113,21 @@ export const OneBox = styled.div`
   background-color: lightyellow;
   border: 1px solid black;
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+
+  .date {
+    margin: 10px 0px;
+  }
+
+  .item {
+    margin-bottom: 10px;
+  }
+  .amount {
+    margin-bottom: 10px;
+  }
+  .description {
+    margin-bottom: 10px;
+  }
 `;
 
 export const StyledLink = styled(Link)`

@@ -21,7 +21,7 @@ function EditExpense({ list, setList }) {
     e.preventDefault();
 
     const editedItem = {
-      id: find.id,
+      id: find?.id,
       date: dateRef.current.value,
       item: itemRef.current.value,
       amount: amountRef.current.value,
@@ -44,12 +44,13 @@ function EditExpense({ list, setList }) {
   const handleDelete = () => {
     const deleteHandler = list.filter((item) => item.id !== find.id);
     setList(deleteHandler);
+    alert("정말 이 지출 항목을 삭제하시겠습니까?");
 
     navigate(-1);
   };
 
   const handleBack = () => {
-    navigate(-1);
+    navigate("/");
   };
 
   return (
@@ -59,40 +60,40 @@ function EditExpense({ list, setList }) {
         <OneBox>
           <h2>수정 페이지</h2>
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="date">
               <label htmlFor="date">날짜:</label>
               <input
                 type="text"
                 id="date"
                 ref={dateRef}
-                defaultValue={find.date}
+                defaultValue={find?.date}
               />
             </div>
-            <div>
+            <div className="item">
               <label htmlFor="item">항목:</label>
               <input
                 type="text"
                 id="item"
                 ref={itemRef}
-                defaultValue={find.item}
+                defaultValue={find?.item}
               />
             </div>
-            <div>
+            <div className="amount">
               <label htmlFor="amount">금액:</label>
               <input
                 type="text"
                 id="amount"
                 ref={amountRef}
-                defaultValue={find.amount}
+                defaultValue={find?.amount}
               />
             </div>
-            <div>
+            <div className="description">
               <label htmlFor="description">내용:</label>
               <input
                 type="text"
                 id="description"
                 ref={descriptionRef}
-                defaultValue={find.description}
+                defaultValue={find?.description}
               />
             </div>
             <button type="submit">수정</button>

@@ -60,7 +60,7 @@ function EditExpense({ list, setList }) {
         <OneBox>
           <h2>수정 페이지</h2>
           <form onSubmit={handleSubmit}>
-            <div className="date">
+            <div className="item">
               <label htmlFor="date">날짜:</label>
               <input
                 type="text"
@@ -78,7 +78,7 @@ function EditExpense({ list, setList }) {
                 defaultValue={find?.item}
               />
             </div>
-            <div className="amount">
+            <div className="item">
               <label htmlFor="amount">금액:</label>
               <input
                 type="text"
@@ -87,7 +87,7 @@ function EditExpense({ list, setList }) {
                 defaultValue={find?.amount}
               />
             </div>
-            <div className="description">
+            <div className="item">
               <label htmlFor="description">내용:</label>
               <input
                 type="text"

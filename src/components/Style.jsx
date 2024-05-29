@@ -114,20 +114,21 @@ export const OneBox = styled.div`
   border: 1px solid black;
   border-radius: 10px;
   width: 100%;
-
+  /* 
   .date {
     margin: 10px 0px;
-  }
+  } */
 
   .item {
-    margin-bottom: 10px;
+    margin: 10px 0px;
+    font-size: 20px;
   }
-  .amount {
+  /* .amount {
     margin-bottom: 10px;
   }
   .description {
     margin-bottom: 10px;
-  }
+  } */
 `;
 
 export const StyledLink = styled(Link)`

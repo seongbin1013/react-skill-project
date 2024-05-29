@@ -1,6 +1,7 @@
 import React from "react";
 import Router from "./shared/Router";
 import { useState } from "react";
+import { ContainerContext } from "./context/Containercontex";
 
 // ExpenseDetails
 const FakeDatas = [
@@ -59,7 +60,16 @@ const FakeDatas = [
 function App() {
   const [list, setList] = useState(FakeDatas);
 
-  return <Router list={list} setList={setList} />;
+  return (
+    <ContainerContext.Provider
+      value={{
+        list,
+        setList,
+      }}
+    >
+      <Router />;
+    </ContainerContext.Provider>
+  );
 }
 
 export default App;

@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import Expense from "./Expense";
 import Month from "./Month";
 import ExpenseDetails from "./ExpenseDetails";
 import { Box, Container, GlobalStyle } from "./Style";
-import { ContainerContext } from "../context/Containercontex";
+import { useDispatch } from "react-redux";
+import { addExpense } from "../redux/slices/expenseSlice";
 
 function Ui() {
   // input 값들 상태변화
@@ -12,7 +13,8 @@ function Ui() {
   const [amount, setAmount] = useState("");
   const [description, setDescription] = useState("");
 
-  const { setList } = useContext(ContainerContext);
+  const dispatch = useDispatch();
+
   // 이벤트
   const handleDate = (e) => setDate(e.target.value);
   const handleList = (e) => setItem(e.target.value);
@@ -44,15 +46,11 @@ function Ui() {
       description,
     };
 
-    addlist(newData);
+    dispatch(addExpense(newData));
     setDate("");
     setItem("");
     setAmount("");
     setDescription("");
-  };
-
-  const addlist = (newData) => {
-    setList((prevTodos) => [...prevTodos, newData]);
   };
 
   return (

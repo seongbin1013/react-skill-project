@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import { ExpenseContext, ExpenseDetailsContainer, StyledLink } from "./Style";
 import { ContainerContext } from "../context/Containercontex";
+import { useSelector } from "react-redux";
 
 function ExpenseDetails() {
-  const { list, selectedMonth } = useContext(ContainerContext);
-  // 월력별
+  const { selectedMonth } = useContext(ContainerContext);
+  const list = useSelector((state) => state.expense);
+  console.log(list);
+
   return (
     <ExpenseDetailsContainer>
       {list

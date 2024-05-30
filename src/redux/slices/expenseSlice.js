@@ -1,12 +1,6 @@
-import React from "react";
-import Router from "./shared/Router";
-import { useState } from "react";
-import { ContainerContext } from "./context/Containercontex";
-import { Provider } from "react-redux";
-import store from "./redux/store";
+import { createSlice } from "@reduxjs/toolkit";
 
-// ExpenseDetails
-const FakeDatas = [
+const INTINAL_DATA = [
   {
     id: "25600f72-56b4-41a7-a9c2-47358580e2f8",
     date: "2024-01-05",
@@ -59,20 +53,15 @@ const FakeDatas = [
   },
 ];
 
-function App() {
-  const [list, setList] = useState(FakeDatas);
-  // 월력별
-  const [selectedMonth, setSelectedMonth] = useState(1);
+const expenseSlice = createSlice({
+  name: "expense",
+  initialState: INTINAL_DATA,
+  reducers: {
+    addExpense: (state, action) => {
+      state.push(action.payload);
+    },
+  },
+});
 
-  return (
-    <ContainerContext.Provider
-      value={{ selectedMonth, setSelectedMonth, list, setList }}
-    >
-      <Provider store={store}>
-        <Router />
-      </Provider>
-    </ContainerContext.Provider>
-  );
-}
-
-export default App;
+export const { addExpense } = expenseSlice.actions;
+export default expenseSlice.reducer;

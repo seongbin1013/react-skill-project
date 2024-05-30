@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 
 import { MonthButton, MonthButtonContainer } from "./Style";
+import { ContainerContext } from "../context/Containercontex";
 
-function Month({ selectedMonth, setSelectedMonth }) {
+function Month() {
   const months = Array.from({ length: 12 }, (_, i) => i + 1);
+
+  const { selectedMonth, setSelectedMonth } = useContext(ContainerContext);
 
   const handleSelectedMonth = (month) => {
     setSelectedMonth(month);

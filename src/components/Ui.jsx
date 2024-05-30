@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Expense from "./Expense";
 import Month from "./Month";
 import ExpenseDetails from "./ExpenseDetails";
 import { Box, Container, GlobalStyle } from "./Style";
+import { ContainerContext } from "../context/Containercontex";
 
-function Ui({ list, setList }) {
+function Ui() {
   // input 값들 상태변화
   const [date, setDate] = useState("");
   const [item, setItem] = useState("");
   const [amount, setAmount] = useState("");
   const [description, setDescription] = useState("");
-  // 월력별
-  const [selectedMonth, setSelectedMonth] = useState(1);
 
+  const { setList } = useContext(ContainerContext);
   // 이벤트
   const handleDate = (e) => setDate(e.target.value);
   const handleList = (e) => setItem(e.target.value);
@@ -103,12 +103,9 @@ function Ui({ list, setList }) {
           </form>
         </Box>
 
-        <Month
-          selectedMonth={selectedMonth}
-          setSelectedMonth={setSelectedMonth}
-        />
+        <Month />
         <Expense />
-        <ExpenseDetails list={list} selectedMonth={selectedMonth} />
+        <ExpenseDetails />
       </Container>
     </>
   );

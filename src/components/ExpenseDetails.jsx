@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ExpenseContext, ExpenseDetailsContainer, StyledLink } from "./Style";
-import { Link } from "react-router-dom";
+import { ContainerContext } from "../context/Containercontex";
 
-function ExpenseDetails({ list, selectedMonth }) {
+function ExpenseDetails() {
+  const { list, selectedMonth } = useContext(ContainerContext);
+  // 월력별
   return (
     <ExpenseDetailsContainer>
       {list

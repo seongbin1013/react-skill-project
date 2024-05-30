@@ -59,15 +59,19 @@ const FakeDatas = [
 
 function App() {
   const [list, setList] = useState(FakeDatas);
+  // 월력별
+  const [selectedMonth, setSelectedMonth] = useState(1);
 
   return (
     <ContainerContext.Provider
       value={{
         list,
         setList,
+        selectedMonth,
+        setSelectedMonth,
       }}
     >
-      <Router />;
+      <Router />
     </ContainerContext.Provider>
   );
 }

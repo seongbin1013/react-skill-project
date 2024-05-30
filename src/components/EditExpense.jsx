@@ -1,15 +1,17 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DetailContainer, GlobalStyle, OneBox } from "./Style";
+import { ContainerContext } from "../context/Containercontex";
 
 // 1. 폼만들기 - 이미 만듦
 // 2. useRef로 값 수정 navigate
 
-function EditExpense({ list, setList }) {
+function EditExpense() {
   const dateRef = useRef();
   const itemRef = useRef();
   const amountRef = useRef();
   const descriptionRef = useRef();
+  const { list, setList } = useContext(ContainerContext);
 
   const navigate = useNavigate();
 
@@ -38,7 +40,7 @@ function EditExpense({ list, setList }) {
 
     setList(updateList);
 
-    navigate(-1);
+    navigate("/");
   };
 
   const handleDelete = () => {
@@ -46,7 +48,7 @@ function EditExpense({ list, setList }) {
     setList(deleteHandler);
     alert("정말 이 지출 항목을 삭제하시겠습니까?");
 
-    navigate(-1);
+    navigate("/");
   };
 
   const handleBack = () => {

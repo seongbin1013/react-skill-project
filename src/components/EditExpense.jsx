@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { DetailContainer, GlobalStyle, OneBox } from "./Style";
+import { DetailContainer, GlobalStyle, OneBox } from "../style/Style";
+import Layout from "../shared/Layout";
 
 // 1. 폼만들기 - 이미 만듦
 // 2. useRef로 값 수정 navigate
 
-function EditExpense({ list, setList }) {
+function EditExpense({ list, setLis, user }) {
   const dateRef = useRef();
   const itemRef = useRef();
   const amountRef = useRef();
@@ -38,18 +39,18 @@ function EditExpense({ list, setList }) {
 
     setList(updateList);
 
-    navigate(-1);
+    navigate("/ui");
   };
 
   const handleDelete = () => {
     const deleteHandler = list.filter((item) => item.id !== find.id);
     setList(deleteHandler);
 
-    navigate(-1);
+    navigate("/ui");
   };
 
   const handleBack = () => {
-    navigate(-1);
+    navigate("/ui");
   };
 
   return (
@@ -57,7 +58,6 @@ function EditExpense({ list, setList }) {
       <GlobalStyle />
       <DetailContainer>
         <OneBox>
-          <h2>수정 페이지</h2>
           <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="date">날짜:</label>

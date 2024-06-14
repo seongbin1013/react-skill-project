@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Expense from "./Expense";
 import Month from "./Month";
 import ExpenseDetails from "./ExpenseDetails";
-import { Box, Container, GlobalStyle } from "./Style";
+import { Box, Container, GlobalStyle } from "../style/Style";
+import Layout from "../shared/Layout";
 
 function Ui({ list, setList }) {
   // input 값들 상태변화

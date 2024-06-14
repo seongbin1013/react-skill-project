@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { MonthButton, MonthButtonContainer } from "./Style";
+import { MonthButton, MonthButtonContainer } from "../style/Style";
 
 function Month({ selectedMonth, setSelectedMonth }) {
   const months = Array.from({ length: 12 }, (_, i) => i + 1);

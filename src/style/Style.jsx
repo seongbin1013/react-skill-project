@@ -102,6 +102,7 @@ export const DetailContainer = styled.div`
   max-width: 1200px;
   min-width: 800px;
   margin: 0 auto;
+  margin-top: 50px;
 `;
 
 export const OneBox = styled.div`
@@ -116,4 +117,116 @@ export const OneBox = styled.div`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+`;
+
+export const LoginForm = styled.form`
+  background-color: wheat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LoginBox = styled.div`
+  width: 300px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px,
+    rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px,
+    rgb(255, 85, 85) 0px 0px 0px 15px;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 30px;
+  gap: 50px;
+
+  .id {
+  }
+
+  .LoginButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+export const LoginInp = styled.input`
+  width: 250px;
+  height: 25px;
+`;
+
+export const LoginButton = styled.button`
+  width: 250px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+`;
+
+export const HeaderBar = styled.section`
+  padding: 10px;
+  background-color: wheat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+
+  .leftSide {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .home {
+    margin-right: 15px;
+    text-decoration: none;
+  }
+
+  .profileBox {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 15px;
+  }
+
+  .profilePic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: white;
+  }
+
+  .logout {
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+  }
+`;
+
+export const MypageBox = styled.div`
+  padding: 50px;
+  background-color: lightyellow;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  gap: 30px;
+
+  .profile {
+    width: 300px;
+    height: 25px;
+  }
+
+  .update {
+    width: 300px;
+    height: 35px;
+    background-color: rgb(0, 123, 255);
+    color: white;
+    border: none;
+  }
 `;
